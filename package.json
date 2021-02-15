@@ -1,0 +1,30 @@
+{
+  "name": "imagemin-most-optimized-jpg",
+  "version": "1.0.0",
+  "description": "Returns the most optimized jpg from mozjpeg, jpegtran or the original if optimization didn't improve it",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "*",
+    "!/tests",
+    "!/.git",
+    "!test.js"
+  ],  
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Paul-Browne/npm-multi-type-image-optimize-jpg.git"
+  },
+  "author": "Paul Browne",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Paul-Browne/npm-multi-type-image-optimize-jpg/issues"
+  },
+  "homepage": "https://github.com/Paul-Browne/npm-multi-type-image-optimize-jpg#readme",
+  "dependencies": {
+    "imagemin": "^7.0.1",
+    "imagemin-jpegtran": "^7.0.0",
+    "imagemin-mozjpeg": "^9.0.0"
+  }
+}
