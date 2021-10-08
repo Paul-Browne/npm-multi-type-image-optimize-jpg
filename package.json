@@ -1,11 +1,12 @@
 {
   "name": "imagemin-most-optimized-jpg",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Returns the most optimized jpg from mozjpeg, jpegtran or the original if optimization didn't improve it",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "type": "module",
   "files": [
     "*",
     "!/tests",
