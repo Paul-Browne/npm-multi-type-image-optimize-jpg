@@ -1,17 +1,11 @@
-import { readFile, writeFile } from "fs";
-import optimizeJPG from "./index.js";
+import { promises as fs } from 'fs';
+import optimizePNG from "./index.js";
 
-const optimze = pathToJPG => {
-	readFile(pathToJPG, (err, data) => {
-		if (err) throw err;
-		optimizeJPG(data).then(res => {
-			writeFile(pathToJPG.replace("src", "dist"), res, err => {
-				if (err) throw err;
-				console.log('The file has been saved!');
-			});
-		})
-	});
-} 
+const optimze = async path => {
+	const data = await fs.readFile(path);
+	const optimized = await optimizePNG(data);
+	await fs.writeFile(path.replace("src", "dist"), optimized);
+}  
 
 optimze("./tests/src/images/landscape.jpg");
 

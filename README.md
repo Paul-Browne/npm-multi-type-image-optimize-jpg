@@ -11,39 +11,36 @@ or
 
 
 ```js
-const fs = require("fs");
-const optimJPG = require("imagemin-most-optimized-jpg");
+import { promises as fs } from 'fs';
+import optimizeJPG from "imagemin-most-optimized-jpg";
 
-fs.readFile("/path/to/source/image.jpg", (err, data) => {
-	if (err) throw err;
-	optimJPG(data).then(image => {
-		// assumes "/path/to/dist/" directory exists
-		fs.writeFile("/path/to/dist/image.jpg", image, err => {
-			if (err) throw err;
-			console.log('The file has been saved!');
-		});
-	})
-});
+const optimze = async path => {
+	const data = await fs.readFile(path);
+	const optimized = await optimizeJPG(data);
+	await fs.writeFile("/path/to/dist/image.jpg"), optimized);
+}  
+
+optimze("/path/to/source/image.jpg");
 ```
 
 Pass plugin quality levels as options for mozjpeg.
 
 ```js
-const fs = require("fs");
-const optimJPG = require("imagemin-most-optimized-jpg");
+import { promises as fs } from 'fs';
+import optimizeJPG from "imagemin-most-optimized-jpg";
 
-const options = {			// defauls shown
-	mozjpeg: 75				// 0-100, 0 - super bad, 100 - best quality
+const options = {			
+	// defaults shown
+
+	// 0-100, 0 - super bad, 100 - best quality
+	mozjpeg: 75
 }
 
-fs.readFile("/path/to/source/image.jpg", (err, data) => {
-	if (err) throw err;
-	optimJPG(data, options).then(image => {
-		// assumes "/path/to/dist/" directory exists
-		fs.writeFile("/path/to/dist/image.jpg", image, err => {
-			if (err) throw err;
-			console.log('The file has been saved!');
-		});
-	})
-});
+const optimze = async path => {
+	const data = await fs.readFile(path);
+	const optimized = await optimizeJPG(data);
+	await fs.writeFile("/path/to/dist/image.jpg"), optimized);
+}  
+
+optimze("/path/to/source/image.jpg");
 ```
