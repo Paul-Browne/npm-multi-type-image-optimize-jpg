@@ -17,7 +17,6 @@ export default async (buffer, opts) => {
       })
     ]
   })
-  return Promise.all([buffer, jpegtran, mozjpeg]).then(res => {
-    return res.sort((a, b) => a.length - b.length)[0];
-  });
+  const res = await Promise.all([buffer, jpegtran, mozjpeg]);
+  return res.sort((a, b) => a.length - b.length)[0];
 }
