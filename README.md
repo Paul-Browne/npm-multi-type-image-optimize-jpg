@@ -11,13 +11,13 @@ or
 
 
 ```js
-import { promises as fs } from 'fs';
+import { readFile, writeFile } from 'fs/promises';
 import optimizeJPG from "imagemin-most-optimized-jpg";
 
 const optimze = async path => {
-	const data = await fs.readFile(path);
+	const data = await readFile(path);
 	const optimized = await optimizeJPG(data);
-	await fs.writeFile("/path/to/dist/image.jpg"), optimized);
+	await writeFile("/path/to/dist/image.jpg"), optimized);
 }  
 
 optimze("/path/to/source/image.jpg");
@@ -26,7 +26,7 @@ optimze("/path/to/source/image.jpg");
 Pass plugin quality levels as options for mozjpeg.
 
 ```js
-import { promises as fs } from 'fs';
+import { readFile, writeFile } from 'fs/promises';
 import optimizeJPG from "imagemin-most-optimized-jpg";
 
 const options = {			
@@ -37,9 +37,9 @@ const options = {
 }
 
 const optimze = async path => {
-	const data = await fs.readFile(path);
+	const data = await readFile(path);
 	const optimized = await optimizeJPG(data);
-	await fs.writeFile("/path/to/dist/image.jpg"), optimized);
+	await writeFile("/path/to/dist/image.jpg"), optimized);
 }  
 
 optimze("/path/to/source/image.jpg");
