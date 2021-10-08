@@ -1,6 +1,6 @@
 {
   "name": "imagemin-most-optimized-jpg",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Returns the most optimized jpg from mozjpeg, jpegtran or the original if optimization didn't improve it",
   "main": "index.js",
   "scripts": {
